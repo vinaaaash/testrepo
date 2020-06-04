@@ -17,7 +17,7 @@ echo "executing the compile & build method"
 
 relDate = sh (script: "date +%m-%d-%Y", returnStdout: true).trim()
 echo " value of reldate ${relDate}"
-sh """sudo npm install -g n
+sh """npm install
 pwd
 ls -lrt"""
 
