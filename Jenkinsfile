@@ -1,3 +1,4 @@
+@Library('pipeline-library-demo')_
 def pipelineToken = 'FeatureRejectedCartonsDistbff'
 def jobUrl='https://lxappdevoptst01:8443/job/TDM/job/DMS/job/RLO/job/Rejected_Cartons_bff_PR/'
 def qadepurl, urlToTag, depEnv, devServer, qaServer, perfServer, prodServer, deployBuildVer, nexusUrl, nexusArtifactId, nexusGroupId, artfactType, microServName, sonarQubeEnv, sonarPrjkey, sonarPrjName, sonarLgn, sonarHostUrl, depUname, depPwd, emailIds, Version, devAppHome, qaAppHome
@@ -35,8 +36,11 @@ script{
   echo "checkout code"
   CheckoutCode()
   echo "starting compile & build"
-  CompileBuild()
-  }
+}
+  stage('Demo') {
+    echo 'Hello world'
+    sayHello 'Avinash'
+}
 }
 }
 }
